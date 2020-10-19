@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codelab - Ecomm</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0px;
+        margin: 0px;
+      }
+      main {
+        flex-grow: 1;
+        background-color: #f1f1f1;
+      }
+      footer {
+        padding: 16px;
+      }
+      #top-header {
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      #bottom-header {
+        padding: 20px;
+        display: flex;
+      }
+      #logo {
+        width: 140px;
+      }
+      #search-box {
+        flex-grow: 1;
+        display: flex;
+        min-height: 40px;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      #search-input {
+        border-radius: 20px;
+        border-width: 0px;
+        padding-left: 6px;
+        font-size: 14px;
+      }
+
+      #search-input:focus {
+        outline: none;
+      }
+
+      .nav-link {
+        color: rgb(65, 64, 64);
+        text-decoration: none;
+        padding: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .nav-link:hover {
+        color: rgb(61, 61, 193);
+        text-decoration: none;
+      }
+      .nav-link-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-link-text {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      #navigation-items {
+        display: flex;
+      }
+      .nav-icons {
+        align-self: center;
+        padding: 10px;
+        font-size: 12px;
+        color: gray;
+      }
+      .nav-list-item:hover {
+        background-color: rgba(0, 0, 0, 0.036);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="top-header">
+        <div>
+          <img
+            id="logo"
+            src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png"
+          />
+        </div>
+        <div id="search-box">
+          <i
+            style="
+              align-self: center;
+              padding: 1px;
+              font-size: 16px;
+              color: gray;
+            "
+            class="lni lni-search-alt"
+          ></i>
+          <input
+            id="search-input"
+            style="flex-grow: 1"
+            type="text"
+            placeholder="Search - What are you looking for?"
+          />
+        </div>
+        <div id="navigation-items">
+          <a class="nav-link" href="#">
+            <div class="nav-link-wrapper">
+              <i class="lni lni-user"></i>
+              <span class="nav-link-text">Login/Sign Up</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#">
+            <div class="nav-link-wrapper">
+              <i class="lni lni-chevron-left-circle"></i>
+              <span class="nav-link-text">My Orders</span>
+            </div>
+          </a>
+          <a class="nav-link" href="#">
+            <div class="nav-link-wrapper">
+              <i class="lni lni-cart"></i>
+              <span class="nav-link-text">My Shopping Cart</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div id="bottom-header">
+        <div style="display: flex; align-items: center">
+          <i style="font-size: 16px" class="lni lni-list nav-icons"></i
+          >Categories
+          <i class="lni lni-chevron-down nav-icons"></i>
+        </div>
+        <div style="margin-left: auto">
+          English - USD
+          <i class="lni lni-chevron-down nav-icons"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        style="
+          display: flex;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-top: 30px;
+        "
+      >
+        <div style="">
+          <div style="min-width: 300px; margin-top: 5px">
+            <nav
+              style="background-color: white; padding: 20px"
+              class="nav flex-column"
+            >
+              <div
+                class="nav-list-item"
+                style="display: flex; flex-direction: row"
+              >
+                <a class="nav-link active" href="#">Consumer Electronics</a
+                ><i
+                  style="margin-left: auto"
+                  class="lni lni-chevron-right nav-icons"
+                ></i>
+              </div>
+              <div
+                class="nav-list-item"
+                style="display: flex; flex-direction: row"
+              >
+                <a class="nav-link active" href="#">Clothes and shoes</a
+                ><i
+                  style="margin-left: auto"
+                  class="lni lni-chevron-right nav-icons"
+                ></i>
+              </div>
+              <div
+                class="nav-list-item"
+                style="display: flex; flex-direction: row"
+              >
+                <a class="nav-link active" href="#">Machinery</a
+                ><i
+                  style="margin-left: auto"
+                  class="lni lni-chevron-right nav-icons"
+                ></i>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div
+          style="
+            flex-grow: 1;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin: 5px">
+            <img
+              src="https://via.placeholder.com/300"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy S20</h5>
+              <p class="card-text">
+                $200 <br />
+                10 pieces in stock
+              </p>
+              <a href="#" class="btn btn-primary"> Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>&copy CodeLab - 2020</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
