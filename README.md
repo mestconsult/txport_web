@@ -1,4 +1,4 @@
-# Node JS backend for our ecommerce application
+# Node JS backend
 
 ## To get started
 
