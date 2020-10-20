@@ -1,4 +1,4 @@
-# txport_web
+# Node JS backend for our ecommerce application
 
 ## To get started
 
