@@ -1,7 +1,17 @@
 const http = require("http");
 const express = require("express");
 const router = require("./routes");
+const mongoose = require("mongoose");
 const cors = require("cors");
+const Product = require("./models/product");
+
+// Database connection
+mongoose.connect("mongodb://localhost/ecommerce-db",{ useNewUrlParser: true, useUnifiedTopology: true })
+.then(()=>{
+    console.log("Database connected successfully!");
+}).catch(()=>{
+    console.log("Database connection failed!");
+});
 
 const app = express();
 

@@ -1,42 +1,45 @@
 const express = require("express");
 const products = require("./products/products");
+const Product = require("./models/product");
 
 const router = express.Router();
 
 // This path returns a list of products
 router.get("/products", (request, response) => {
-    response.json(products);
+    Product.find((error, data)=>{
+        response.json(data);
+    });
+});
+
+// This path returns a single item in the database
+router.get("/products/:productId", (request, response) => {
+    Product.findById(request.params.productId,(error, data)=>{
+        response.json(data);
+    });
 });
 
 router.post("/products", (request, response) => {
-    products.push({
-        id: products.length + 1,
+    const product = new Product({
         productName: request.body.productName,
         price: request.body.price,
         category: request.body.category,
-        productImageUrl: request.body.productImageUrl,
+        productImageUrl: request.body.productImageUrl
     });
-
-    response.json(products);
+    product.save((error, data)=>{
+        response.json(data);
+    });
 });
 
 router.put("/products", (request, response) => {
-    const newUpdatedProductList = [];
-
-    products.map((item) => {
-        if (item.id === request.body.id) {
-            item.productName = request.body.productName;
-            item.price = request.body.price;
-            item.category = request.body.category;
-            item.productImageUrl = request.body.productImageUrl;
-        }
-        newUpdatedProductList.push(item);
-    });
-    response.json(newUpdatedProductList);
+    Product.findByIdAndUpdate(request.body.id,request.body,(error, data)=>{
+        response.json(data);
+    })
 });
 
 router.delete("/products", (request, response) => {
-    response.send("Your product has been deleted!");
+    Product.findByIdAndRemove(request.body.id, (error, data)=>{
+        response.json(data);
+    })
 });
 
 module.exports = router;
