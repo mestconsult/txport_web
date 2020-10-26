@@ -11,6 +11,12 @@ router.get("/products", (request, response) => {
     });
 });
 
+router.get("/products/categories/:categoryName", (request, response) => {
+    Product.find({"category": request.params.categoryName},(error, data)=>{
+        response.json(data);
+    });
+});
+
 // This path returns a single item in the database
 router.get("/products/:productId", (request, response) => {
     Product.findById(request.params.productId,(error, data)=>{
